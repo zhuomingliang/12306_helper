@@ -1,0 +1,35 @@
+{
+   "background": {
+      "page": "background.html",
+      "persistent": true
+   },
+   "browser_action": {
+      "default_icon": "icons/icon_32.png",
+      "default_popup": "popup.html",
+      "default_title": "12306\u8BA2\u7968\u52A9\u624B"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "exclude_globs": [  ],
+      "exclude_matches": [  ],
+      "include_globs": [  ],
+      "js": [ "12306_ticket_helper.user.js" ],
+      "matches": [ "http://dynamic.12306.cn/otsweb/*", "https://dynamic.12306.cn/otsweb/*", "https://www.12306.cn/*" ],
+      "run_at": "document_idle"
+   } ],
+   "content_security_policy": "script-src 'self' https://github.com; object-src 'self';",
+   "description": "\u5E2E\u60A8\u8BA2\u7968\u7684\u5C0F\u52A9\u624B by \u6728\u9C7C :-)",
+   "homepage_url": "http://www.fishlee.net/",
+   "icons": {
+      "128": "icons/icon_128.png",
+      "16": "icons/icon_16.png",
+      "32": "icons/icon_32.png",
+      "48": "icons/icon_48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2xuDOawtIMJP0yWxFjXlXa+LGZFx3K2fVSvc4Nj1P4d3hnj4jysyuniCkv+FHq9lw+HEjURBUakbuu1Abkr6tlJnOkbVHnB8LSZWQVgpVE8+6QSX72Of/j0pZhyhq72R07lLdvA9Fmzb/+BBJ6zz07c2mxZjdIPeaGYlsIrD6NQIDAQAB",
+   "manifest_version": 2,
+   "name": "12306 \u8BA2\u7968\u52A9\u624B for Chrome",
+   "permissions": [ "http://www.12306.cn/", "https://*.12306.cn/*", "notifications", "webRequest", "webRequestBlocking" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "4.5.1"
+}
